@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: temp
+spec:
+  containers:
+    - name: app
+      image: nginx:1.26-alpine
+      volumeMounts:
+        - name: donnees
+          mountPath: /donnees
+  volumes:
+    - name: donnees
+      emptyDir: {}

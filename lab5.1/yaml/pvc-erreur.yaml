@@ -1,0 +1,12 @@
+# Le nom de la StorageClass est volontairement erroné (local-pat) :
+# il est corrigé en local-path avec sed pendant l'étape 7.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: data-erreur
+spec:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: local-pat
+  resources:
+    requests:
+      storage: 1Gi
